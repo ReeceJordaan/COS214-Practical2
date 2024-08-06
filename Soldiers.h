@@ -5,14 +5,23 @@ using namespace std;
 
 class Soldiers
 {
-	protected:
-		virtual Soldiers* createUnit();
-		virtual int calculateTotalHealthPerUnit();
-		virtual int calculateTotalDamagePerUnit();
-		virtual int calculateTotalDefencePerUnit();
+	public:
+		virtual void engage();
+		virtual void disengage();
+		virtual Soldiers* clonis();
+		Memento* militusMemento();
+		void vivificaMemento(Memento* mem);
 
 	private:
-		Soldiers* soldiers;
+		int healthPerSoldier;
+		int damagePerSoldier;
+		int defencePerSoldier;
+		int amountOfSoldiersPerUnit;
+		string unitName;
+		virtual void prepare();
+		virtual void execute();
+		virtual void retreat();
+		virtual void rest();
 };
 
 
