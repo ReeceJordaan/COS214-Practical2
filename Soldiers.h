@@ -1,6 +1,8 @@
 #ifndef SOLDIERS_H
 #define SOLDIERS_H
 
+#include "Memento.h"
+
 using namespace std;
 
 class Soldiers
