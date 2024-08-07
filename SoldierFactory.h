@@ -8,7 +8,7 @@ using namespace std;
 class SoldierFactory
 {
 	protected:
-		virtual Soldiers* createUnit();
+		virtual Soldiers* createUnit() = 0;
 		virtual int calculateTotalHealthPerUnit();
 		virtual int calculateTotalDamagePerUnit();
 		virtual int calculateTotalDefencePerUnit();
