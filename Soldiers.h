@@ -2,6 +2,7 @@
 #define SOLDIERS_H
 
 #include "Memento.h"
+#include <string>
 
 using namespace std;
 
@@ -10,7 +11,7 @@ class Soldiers
 	public:
 		virtual void engage();
 		virtual void disengage();
-		virtual Soldiers* clonis();
+		virtual Soldiers* clonis() = 0;
 		Memento* militusMemento();
 		void vivificaMemento(Memento* mem);
 
@@ -20,10 +21,10 @@ class Soldiers
 		int defencePerSoldier;
 		int amountOfSoldiersPerUnit;
 		string unitName;
-		virtual void prepare();
-		virtual void execute();
-		virtual void retreat();
-		virtual void rest();
+		virtual void prepare() = 0;
+		virtual void execute() = 0;
+		virtual void retreat() = 0;
+		virtual void rest() = 0;
 };
 
 

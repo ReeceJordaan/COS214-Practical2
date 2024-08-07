@@ -2,6 +2,7 @@
 #define SHIELDBEARER_H
 
 #include "Soldiers.h"
+#include <string>
 
 using namespace std;
 
@@ -11,7 +12,6 @@ class ShieldBearer : public Soldiers
 		void engage();
 		void disengage();
 		Soldiers* clonis();
-		
 
 	private:
 		int healthPerSoldier;

@@ -2,6 +2,7 @@
 #define INFANTRY_H
 
 #include "Soldiers.h"
+#include <string>
 
 using namespace std;
 
@@ -11,7 +12,6 @@ class Infantry : public Soldiers
 		void engage();
 		void disengage();
 		Soldiers* clonis();
-		
 
 	private:
 		int healthPerSoldier;

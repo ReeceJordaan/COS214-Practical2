@@ -2,6 +2,7 @@
 #define BOATMAN_H
 
 #include "Soldiers.h"
+#include <string>
 
 using namespace std;
 
@@ -12,7 +13,6 @@ class Boatman : public Soldiers
 		void disengage();
 		Soldiers* clonis();
 		
-
 	private:
 		int healthPerSoldier;
 		int damagePerSoldier;
