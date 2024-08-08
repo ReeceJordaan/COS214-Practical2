@@ -8,10 +8,10 @@ using namespace std;
 class ShieldBearerFactory : public SoldierFactory
 {
 	public:
-		Soldiers* createUnit();
-		int calculateTotalHealthPerUnit();
-		int calculateTotalDamagePerUnit();
-		int calculateTotalDefencePerUnit();
+		Soldiers* createUnit() override;
+		int calculateTotalHealthPerUnit() override;
+		int calculateTotalDamagePerUnit() override;
+		int calculateTotalDefencePerUnit() override;
 };
 
 
