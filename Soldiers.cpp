@@ -21,30 +21,36 @@ void Soldiers::disengage() {
 }
 
 Memento* Soldiers::militusMemento() {
-    
+    return new Memento(healthPerSoldier, damagePerSoldier, defencePerSoldier, amountOfSoldiersPerUnit, unitName);
 }
 
 void Soldiers::vivificaMemento(Memento* mem) {
-    
+    if (mem != nullptr) {
+        healthPerSoldier = mem->healthPerSoldier;
+        damagePerSoldier = mem->damagePerSoldier;
+        defencePerSoldier = mem->defencePerSoldier;
+        amountOfSoldiersPerUnit = mem->amountOfSoldiersPerUnit;
+        unitName = mem->unitName;
+    }
 }
 
-int Soldiers::getHealthPerSoldier() {
+int Soldiers::getHealthPerSoldier() const {
     return healthPerSoldier;
 }
 
-int Soldiers::getDamagePerSoldier() {
+int Soldiers::getDamagePerSoldier() const {
     return damagePerSoldier;
 }
 
-int Soldiers::getDefencePerSoldier() {
+int Soldiers::getDefencePerSoldier() const {
     return defencePerSoldier;
 }
 
-int Soldiers::getAmountOfSoldiersPerUnit() {
+int Soldiers::getAmountOfSoldiersPerUnit() const {
     return amountOfSoldiersPerUnit;
 }
 		
-string Soldiers::getUnitName() {
+string Soldiers::getUnitName() const {
     return unitName;
 }
 

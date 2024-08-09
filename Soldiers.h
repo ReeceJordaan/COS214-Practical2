@@ -15,11 +15,11 @@ class Soldiers
 		virtual Soldiers* clonis() = 0;
 		Memento* militusMemento();
 		void vivificaMemento(Memento* mem);
-		int getHealthPerSoldier();
-		int getDamagePerSoldier();
-		int getDefencePerSoldier();
-		int getAmountOfSoldiersPerUnit();
-		string getUnitName();
+		int getHealthPerSoldier() const;
+		int getDamagePerSoldier() const;
+		int getDefencePerSoldier() const;
+		int getAmountOfSoldiersPerUnit() const;
+		string getUnitName() const;
 		void printStats();
 		void damage(Soldiers* target);
 		void heal();

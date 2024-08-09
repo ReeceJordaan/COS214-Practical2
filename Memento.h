@@ -5,14 +5,11 @@
 
 using namespace std;
 
+class Soldiers;
+
 class Memento
 {
-	public:
-		int getHealthPerSoldier();
-		int getDamagePerSoldier();
-		int getDefencePerSoldier();
-		int getAmountOfSoldiersPerUnit();
-		string getUnitName();
+    friend class Soldiers;
 
 	private:
 		int healthPerSoldier;
