@@ -7,6 +7,13 @@ using namespace std;
 
 class Memento
 {
+	public:
+		int getHealthPerSoldier();
+		int getDamagePerSoldier();
+		int getDefencePerSoldier();
+		int getAmountOfSoldiersPerUnit();
+		string getUnitName();
+
 	private:
 		int healthPerSoldier;
 		int damagePerSoldier;

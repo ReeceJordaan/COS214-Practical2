@@ -1,16 +1,12 @@
 #include "Infantry.h"
 #include <iostream>
 
+Infantry::Infantry(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, string unitName) : Soldiers(healthPerSoldier, damagePerSoldier, defencePerSoldier, amountOfSoldiersPerUnit, unitName) {
+
+}
+
 Soldiers* Infantry::clonis() {
-    Infantry* infantry = new Infantry();
-
-    infantry->healthPerSoldier = this->healthPerSoldier;
-    infantry->damagePerSoldier = this->damagePerSoldier;
-    infantry->defencePerSoldier = this->defencePerSoldier;
-    infantry->amountOfSoldiersPerUnit = this->amountOfSoldiersPerUnit;
-    infantry->unitName = this->unitName;
-
-    return infantry;
+    return new Infantry(this->healthPerSoldier, this->damagePerSoldier, this->defencePerSoldier, this->amountOfSoldiersPerUnit, this->unitName);
 }
 
 void Infantry::engage() {

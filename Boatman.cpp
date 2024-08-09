@@ -1,16 +1,12 @@
 #include "Boatman.h"
 #include <iostream>
 
+Boatman::Boatman(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, string unitName) : Soldiers(healthPerSoldier, damagePerSoldier, defencePerSoldier, amountOfSoldiersPerUnit, unitName) {
+
+}
+
 Soldiers* Boatman::clonis() {
-    Boatman* boatman = new Boatman();
-
-    boatman->healthPerSoldier = this->healthPerSoldier;
-    boatman->damagePerSoldier = this->damagePerSoldier;
-    boatman->defencePerSoldier = this->defencePerSoldier;
-    boatman->amountOfSoldiersPerUnit = this->amountOfSoldiersPerUnit;
-    boatman->unitName = this->unitName;
-
-    return boatman;
+    return new Boatman(this->healthPerSoldier, this->damagePerSoldier, this->defencePerSoldier, this->amountOfSoldiersPerUnit, this->unitName);
 }
 
 void Boatman::engage() {

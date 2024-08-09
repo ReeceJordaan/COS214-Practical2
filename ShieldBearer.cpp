@@ -1,16 +1,12 @@
 #include "ShieldBearer.h"
 #include <iostream>
 
+ShieldBearer::ShieldBearer(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, string unitName) : Soldiers(healthPerSoldier, damagePerSoldier, defencePerSoldier, amountOfSoldiersPerUnit, unitName) {
+
+}
+
 Soldiers* ShieldBearer::clonis() {
-    ShieldBearer* shieldBearer = new ShieldBearer();
-
-    shieldBearer->healthPerSoldier = this->healthPerSoldier;
-    shieldBearer->damagePerSoldier = this->damagePerSoldier;
-    shieldBearer->defencePerSoldier = this->defencePerSoldier;
-    shieldBearer->amountOfSoldiersPerUnit = this->amountOfSoldiersPerUnit;
-    shieldBearer->unitName = this->unitName;
-
-    return shieldBearer;
+    return new ShieldBearer(this->healthPerSoldier, this->damagePerSoldier, this->defencePerSoldier, this->amountOfSoldiersPerUnit, this->unitName);
 }
 
 void ShieldBearer::engage() {

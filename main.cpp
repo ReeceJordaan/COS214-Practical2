@@ -4,9 +4,9 @@
 #include <iostream>
 
 int main() {
-    Infantry infantry;
-    ShieldBearer shieldBearer;
-    Boatman boatman;
+    Infantry infantry = Infantry(20, 20, 20, 20, "3rd Infantry Division");
+    ShieldBearer shieldBearer = ShieldBearer(30, 30, 30, 30, "1st Shield Bearer Division");
+    Boatman boatman = Boatman(40, 40, 40, 40, "4th Boatman Division");
 
     std::cout << "Infantry Engagement:" << std::endl;
     infantry.engage();
@@ -22,6 +22,30 @@ int main() {
     boatman.engage();
     std::cout << "\nInfantry Disengagement:" << std::endl;
     boatman.disengage();
+
+    std::cout << "\n\nInfantry Stats:" << std::endl;
+    infantry.printStats();
+
+    std::cout << "\n\nShield Bearer Stats:" << std::endl;
+    shieldBearer.printStats();
+
+    std::cout << "\n\nBoatman Stats:" << std::endl;
+    boatman.printStats();
+
+    infantry.damage(&boatman);
+    infantry.damage(&boatman);
+    infantry.damage(&boatman);
+    infantry.heal();
+    infantry.heal();
+
+    std::cout << "\n\nInfantry Stats:" << std::endl;
+    infantry.printStats();
+
+    std::cout << "\n\nShield Bearer Stats:" << std::endl;
+    shieldBearer.printStats();
+
+    std::cout << "\n\nBoatman Stats:" << std::endl;
+    boatman.printStats();
 
     return 0;
 }

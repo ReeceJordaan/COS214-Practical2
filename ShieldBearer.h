@@ -9,6 +9,7 @@ using namespace std;
 class ShieldBearer : public Soldiers
 {
 	public:
+		ShieldBearer(int healthPerSoldier, int damagePerSoldier, int defencePerSoldier, int amountOfSoldiersPerUnit, string unitName);
 		void engage();
 		void disengage();
 		Soldiers* clonis();
