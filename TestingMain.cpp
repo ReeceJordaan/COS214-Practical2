@@ -5,6 +5,7 @@
 #include "ShieldBearerFactory.h"
 #include "BoatmanFactory.h"
 #include "Soldiers.h"
+#include "CareTaker.h"
 #include <iostream>
 
 using namespace std;
@@ -81,6 +82,61 @@ int main() {
 	cout << "Total Health: "<<boatmanFactory.calculateTotalHealthPerUnit()<<"\n";
 	cout << "Total Damage: "<<boatmanFactory.calculateTotalDamagePerUnit()<<"\n";
 	cout << "Total Defence: "<<boatmanFactory.calculateTotalDefencePerUnit() <<"\n";
+
+	cout<<"\n\n\t\tTesting Memento:\t\t\n\n\n";
+
+	CareTaker infantryCareTaker = CareTaker();
+	CareTaker boatmanCareTaker = CareTaker();
+
+	boatmanUnit->heal();
+	boatmanUnit->heal();
+	boatmanUnit->heal();
+	boatmanUnit->heal();
+
+	std::cout << "\n\nInfantry Stats:" << std::endl;
+	infantryUnit->printStats();
+
+	std::cout << "\n\nShield Bearer Stats:" << std::endl;
+	shieldBearerUnit->printStats();
+
+	std::cout << "\n\nBoatman Stats:" << std::endl;
+	boatmanUnit->printStats();
+
+	cout << "\nSaving Infantry..." << "\n";
+	cout << "Saving Boatman..." << "\n\n";
+
+	infantryCareTaker.save(infantryUnit->militusMemento());
+	boatmanCareTaker.save(boatmanUnit->militusMemento());
+
+	infantryUnit->damage(boatmanUnit);
+	infantryUnit->damage(boatmanUnit);
+	infantryUnit->damage(boatmanUnit);
+	infantryUnit->heal();
+	infantryUnit->heal();
+
+	std::cout << "\n\nInfantry Stats:" << std::endl;
+	infantryUnit->printStats();
+
+	std::cout << "\n\nShield Bearer Stats:" << std::endl;
+	shieldBearerUnit->printStats();
+
+	std::cout << "\n\nBoatman Stats:" << std::endl;
+	boatmanUnit->printStats();
+
+	cout << "\nUndoing Infantry..." << "\n";
+	cout << "Undoing Boatman..." << "\n";
+
+	infantryUnit->vivificaMemento(infantryCareTaker.undo());
+	boatmanUnit->vivificaMemento(boatmanCareTaker.undo());
+
+	std::cout << "\n\nInfantry Stats:" << std::endl;
+	infantryUnit->printStats();
+
+	std::cout << "\n\nShield Bearer Stats:" << std::endl;
+	shieldBearerUnit->printStats();
+
+	std::cout << "\n\nBoatman Stats:" << std::endl;
+	boatmanUnit->printStats();
 
 	delete infantryUnit;
 	delete shieldBearerUnit;
