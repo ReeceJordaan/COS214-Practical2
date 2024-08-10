@@ -2,16 +2,18 @@
 #define BOATMANFACTORY_H
 
 #include "SoldierFactory.h"
+#include <iostream>
 
 using namespace std;
 
 class BoatmanFactory : public SoldierFactory
 {
 	public:
-		Soldiers* createUnit() override;
-		int calculateTotalHealthPerUnit() override;
-		int calculateTotalDamagePerUnit() override;
-		int calculateTotalDefencePerUnit() override;
+		BoatmanFactory(Soldiers* soldiers);
+		Soldiers* createUnit();
+		int calculateTotalHealthPerUnit();
+		int calculateTotalDamagePerUnit();
+		int calculateTotalDefencePerUnit();
 };
 
 

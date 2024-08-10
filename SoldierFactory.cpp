@@ -1,13 +1,17 @@
 #include "SoldierFactory.h"
 
+SoldierFactory::SoldierFactory(Soldiers* soldiers){
+	this->soldiers = soldiers;
+}
+
 int SoldierFactory::calculateTotalHealthPerUnit(){
-	return soldiers->gethealthPerSoldier() * soldiers->getamountOfSoldiersPerUnit();
+	return soldiers->getHealthPerSoldier() * soldiers->getAmountOfSoldiersPerUnit();
 }
 
 int SoldierFactory::calculateTotalDamagePerUnit(){
-	return soldiers->damagePerSoldier() * soldiers->getamountOfSoldiersPerUnit();
+	return soldiers->getDamagePerSoldier() * soldiers->getAmountOfSoldiersPerUnit();
 }
 
 int SoldierFactory::calculateTotalDefencePerUnit(){
-	return soldiers->defencePerSoldier() * soldiers->getamountOfSoldiersPerUnit();
+	return soldiers->getDefencePerSoldier() * soldiers->getAmountOfSoldiersPerUnit();
 }

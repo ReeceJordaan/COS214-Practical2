@@ -1,8 +1,13 @@
 #include "InfantryFactory.h"
 #include "Infantry.h"
 
+InfantryFactory::InfantryFactory(Soldiers* soldiers) : SoldierFactory(soldiers){
+}
+
 Soldiers* InfantryFactory::createUnit(){
-	return new Infantry();
+	//cout<<"check: "<<soldiers->getHealthPerSoldier();
+	//return NULL;
+	return new Infantry(soldiers->getHealthPerSoldier(), soldiers->getDamagePerSoldier(), soldiers->getDefencePerSoldier(), soldiers->getAmountOfSoldiersPerUnit(), soldiers->getUnitName());
 }
 
 int InfantryFactory::calculateTotalHealthPerUnit(){

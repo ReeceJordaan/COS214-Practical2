@@ -2,16 +2,18 @@
 #define INFANTRYFACTORY_H
 
 #include "SoldierFactory.h"
+#include <iostream>
 
 using namespace std;
 
 class InfantryFactory : public SoldierFactory
 {
 	public:
-		Soldiers* createUnit() override;
-		int calculateTotalHealthPerUnit() override;
-		int calculateTotalDamagePerUnit() override;
-		int calculateTotalDefencePerUnit() override;
+		InfantryFactory(Soldiers* soldiers);
+		Soldiers* createUnit();
+		int calculateTotalHealthPerUnit();
+		int calculateTotalDamagePerUnit();
+		int calculateTotalDefencePerUnit();
 };
 
 
