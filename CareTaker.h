@@ -11,7 +11,7 @@ class CareTaker
 	public:
 		Memento* undo();
 		void save(Memento* mem);
-		~CareTaker();
+		virtual ~CareTaker();
 
 	private:
 		stack<Memento*> mementoStack;
